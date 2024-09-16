@@ -5,12 +5,20 @@ DROP TABLE IF EXISTS savings_account;
 DROP TABLE IF EXISTS employee;
 DROP TABLE IF EXISTS saves;
 DROP TABLE IF EXISTS borrows;
+DROP TABLE IF EXISTS saves;
+DROP TABLE IF EXISTS borrows;
 
+CREATE TABLE branch (
 CREATE TABLE branch (
     branch_id INTEGER PRIMARY KEY,
     branch_name VARCHAR(100),
     street VARCHAR(100),
+    branch_name VARCHAR(100),
+    street VARCHAR(100),
     building_number INTEGER,
+    city VARCHAR(100),
+    phone_number VARCHAR(15),
+    opening_hours VARCHAR(50)
     city VARCHAR(100),
     phone_number VARCHAR(15),
     opening_hours VARCHAR(50)
@@ -26,8 +34,13 @@ CREATE TABLE customer (
     country VARCHAR(100),
     phone_number VARCHAR(15),
     date_of_birth DATE
+    city VARCHAR(100),
+    country VARCHAR(100),
+    phone_number VARCHAR(15),
+    date_of_birth DATE
 );
 
+CREATE TABLE loan (
 CREATE TABLE loan (
     loan_number INTEGER PRIMARY KEY,
     branch_id INTEGER,
@@ -42,6 +55,15 @@ CREATE TABLE loan (
     FOREIGN KEY (branch_id) REFERENCES branch(branch_id)
 );
 
+CREATE TABLE savings_account (
+    account_id INTEGER PRIMARY KEY,
+    customer_id INTEGER,
+    branch_id INTEGER,
+    account_type VARCHAR(50),
+    balance DECIMAL(12, 2),
+    creation_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+    FOREIGN KEY (branch_id) REFERENCES branch(branch_id)
 CREATE TABLE savings_account (
     account_id INTEGER PRIMARY KEY,
     customer_id INTEGER,
