@@ -1,5 +1,7 @@
 GIT INSTRUCTIE:
 
+Test
+
 1. Clone the Repository
 First, clone the repository from GitHub to your local machine:
 ```
