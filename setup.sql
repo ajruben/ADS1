@@ -1,3 +1,9 @@
+DROP TABLE IF EXISTS branch;
+DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS loan; 
+DROP TABLE IF EXISTS savings_account;
+DROP TABLE IF EXISTS employee;
+
 CREATE TABLE branch(
     branch_id INTEGER PRIMARY KEY,
     branch_name TEXT,
@@ -18,4 +24,12 @@ CREATE TABLE loan(
     loan_number INTEGER PRIMARY KEY,
     branch_name TEXT,
     amount REAL
+);
+
+CREATE TABLE savings_account(
+    account_id INTEGER PRIMARY KEY
+);
+
+CREATE TABLE employee(
+    employee_id INTEGER PRIMARY KEY
 );
