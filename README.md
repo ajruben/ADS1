@@ -2,6 +2,8 @@ GIT INSTRUCTIE:
 
 Test
 
+Dit is een test
+
 1. Clone the Repository
 First, clone the repository from GitHub to your local machine:
 ```
